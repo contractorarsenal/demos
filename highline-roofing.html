@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highline Roofing | Everett WA's Trusted Roofers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a5c;
+            --secondary: #d4542a;
+            --accent: #f4a523;
+            --dark: #0d1b2a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .subheading {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--dark);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-phone {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 58, 92, 0.95), rgba(13, 27, 42, 0.9)), url('https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1600') center/cover;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 5%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 16px 0 16px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 550px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 0 16px 0 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 16px 0 16px 0;
+            border: 2px solid var(--accent);
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Trust Strip Marquee */
+        .trust-strip {
+            background: var(--primary);
+            padding: 1rem 0;
+            overflow: hidden;
+        }
+
+        .marquee {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 4rem;
+            padding: 0 2rem;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .marquee-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Services */
+        .services {
+            padding: 6rem 5%;
+            background: var(--light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            font-family: 'Syne', sans-serif;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0 24px 0 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 0 12px 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 6rem 5%;
+            background: var(--dark);
+        }
+
+        .why-us .section-header h2 {
+            color: white;
+        }
+
+        .why-us .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--secondary);
+            line-height: 1;
+        }
+
+        .why-item h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin: 1rem 0;
+        }
+
+        .why-item p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 0 24px 0 24px;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        .review-card p {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviewer {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .reviewer span {
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-detail svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 0 24px 0 24px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            padding: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Floating Contact Button */
+        .floating-contact {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0 16px 0 16px;
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(212, 84, 42, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .floating-contact:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: scale(1.05);
+        }
+
+        .floating-contact svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Live Demo Tab */
+        .demo-tab {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.75rem 0.5rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 2px;
+            z-index: 999;
+            border-radius: 8px 0 0 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-secondary {
+                display: block;
+                margin: 1rem 0 0 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HIGHLINE <span>ROOFING</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:206-555-0123" class="nav-phone">206-555-0123</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Everett WA's Premier Roofing Contractor</div>
+            <h1>YOUR ROOF PROTECTS <span>EVERYTHING</span> YOU LOVE</h1>
+            <p>From storm damage repairs to complete roof replacements, Highline Roofing delivers bulletproof craftsmanship that stands up to Pacific Northwest weather.</p>
+            <a href="#contact" class="btn-primary">Get Your Free Quote</a>
+            <a href="tel:206-555-0123" class="btn-secondary">Call 206-555-0123</a>
+        </div>
+    </section>
+
+    <!-- Trust Strip Marquee -->
+    <div class="trust-strip">
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Licensed & Insured
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    20+ Years Experience
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    5-Star Rated
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Free Estimates
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Warranty Protected
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Local Family Owned
+                </div>
+            </div>
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Licensed & Insured
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    20+ Years Experience
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    5-Star Rated
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Free Estimates
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Warranty Protected
+                </div>
+                <div class="marquee-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Local Family Owned
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>OUR ROOFING SERVICES</h2>
+            <p class="subheading">Complete roofing solutions for Everett homes and businesses</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                </div>
+                <h3>ROOF REPLACEMENT</h3>
+                <p>Complete tear-off and replacement with premium materials. We handle everything from permits to final inspection. Your new roof, built to last decades.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                </div>
+                <h3>ROOF REPAIRS</h3>
+                <p>Leaks, missing shingles, storm damage. We diagnose fast and fix right. No temporary patches here. Just permanent solutions that protect your home.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                </div>
+                <h3>FREE INSPECTIONS</h3>
+                <p>Not sure what your roof needs? We climb up, assess every inch, and give you an honest report. No pressure, no obligation. Just the facts.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15h-2v-6H9v6H7v-7.81l5-4.5 5 4.5V18z"/></svg>
+                </div>
+                <h3>NEW CONSTRUCTION</h3>
+                <p>Building a new home or commercial property? We work with builders to deliver flawless roofing systems from the ground up. Done right the first time.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17.66 8L12 2.35 6.34 8C4.78 9.56 4 11.64 4 13.64c0 2 .78 4.11 2.34 5.67C7.9 20.87 9.95 21.66 12 21.66s4.1-.79 5.66-2.35C19.22 17.75 20 15.64 20 13.64c0-2-.78-4.08-2.34-5.64zM6 14c.01-2 .62-3.27 1.76-4.4L12 5.27l4.24 4.38C17.38 10.77 17.99 12 18 14H6z"/></svg>
+                </div>
+                <h3>GUTTER SYSTEMS</h3>
+                <p>Seamless gutters that channel water away from your foundation. We custom fabricate on-site for a perfect fit. Say goodbye to clogs and overflow.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                </div>
+                <h3>EMERGENCY SERVICE</h3>
+                <p>Storm just ripped through? Tree on your roof? We respond fast with emergency tarping and repairs. Your home protected when it matters most.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="section-header">
+            <h2>WHY EVERETT CHOOSES HIGHLINE</h2>
+            <p class="subheading">Numbers that prove our commitment to excellence</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">20+</div>
+                <h3>YEARS IN BUSINESS</h3>
+                <p>Two decades of roofing expertise in the Pacific Northwest. We know local weather patterns and what materials hold up best.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">2,500+</div>
+                <h3>ROOFS COMPLETED</h3>
+                <p>Thousands of Everett homeowners trust their roofs to us. Our track record speaks louder than any sales pitch ever could.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">100%</div>
+                <h3>SATISFACTION GUARANTEE</h3>
+                <p>We stand behind every job. If something is not right, we make it right. No excuses, no runaround. Just results.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">50</div>
+                <h3>YEAR WARRANTY</h3>
+                <p>Our premium roofing systems come with industry-leading warranties. Peace of mind that lasts generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <h2>WHAT HOMEOWNERS SAY</h2>
+            <p class="subheading">Real reviews from real Everett customers</p>
+        </div>
